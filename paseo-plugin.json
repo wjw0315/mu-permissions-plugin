@@ -1,0 +1,9 @@
+{
+  "id": "mu-permissions",
+  "name": "mu 权限模式",
+  "$comment": "Composer pill for mu agents: pick mu's permission mode (full / judge / ask) without leaving the chat box.",
+  "media": [],
+  "requirements": {
+    "paseo": ">=0.16.2"
+  }
+}
