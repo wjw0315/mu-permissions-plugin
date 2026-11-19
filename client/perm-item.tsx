@@ -32,7 +32,10 @@ export function MuPermissionItem({ theme }: PluginComposerItemProps) {
 
   const provider = composer.agent.provider ?? "";
   const isMu = provider === "" || provider === "mu" || provider.startsWith("mu/");
-  if (!isMu || composer.context !== "draft") return null;
+  // "draft": a new agent tab. "new-workspace": the New workspace screen, whose
+  // composer also exists before any agent does.
+  const isPreAgent = composer.context === "draft" || composer.context === "new-workspace";
+  if (!isMu || !isPreAgent) return null;
 
   const colors = theme.colors;
   const current = mode ?? "judge";
